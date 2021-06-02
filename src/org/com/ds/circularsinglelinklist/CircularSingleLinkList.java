@@ -71,7 +71,7 @@ public class CircularSingleLinkList {
             last = temp;
         }
         else{
-            last.next = temp.next;
+            temp.next = last.next;
         }
         last.next = temp;
         length++;
