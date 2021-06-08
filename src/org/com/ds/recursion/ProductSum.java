@@ -1,6 +1,5 @@
 package org.com.ds.recursion;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class ProductSum {
