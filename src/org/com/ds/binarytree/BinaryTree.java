@@ -114,7 +114,8 @@ public class BinaryTree {
             if (current != null) {
                 stack.push(current);
                 current = current.left;
-            } else {
+            }
+            else {
                 TreeNode temp = stack.peek().right;
                 if (temp == null) {
                     temp = stack.pop();
