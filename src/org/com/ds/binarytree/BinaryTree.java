@@ -150,6 +150,47 @@ public class BinaryTree {
         }
     }
 
+    public int findMax(TreeNode root){
+
+        if(null == root){
+            return Integer.MIN_VALUE;
+        }
+        int result = root.data;
+        int left = findMax(root.left);
+        int right = findMax(root.right);
+        if(left>result){
+            result = left;
+        }
+        if(right>result){
+            result = right;
+        }
+        return result;
+    }
+
+    public int findMaxIteratively(TreeNode root){
+
+        int max = Integer.MIN_VALUE;
+        if(null == root){
+            return max;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        TreeNode current = root;
+        queue.offer(current);
+        while(!queue.isEmpty()){
+            TreeNode node = queue.poll();
+            if(node.data>max){
+                max = node.data;
+            }
+            if(null != current.left){
+                queue.offer(current.left);
+            }
+            if(null != current.right){
+                queue.offer(current.right);
+            }
+        }
+        return max;
+    }
+
     public static void main(String[] args) {
 
         BinaryTree binaryTree = new BinaryTree();
