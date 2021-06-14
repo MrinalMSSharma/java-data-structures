@@ -46,8 +46,8 @@ public class NQueen {
                 return false;
             }
         }
-        for(i=row; i>=n; i++){
-            if(board[i][col] == 1){
+        for(i=row, j=col; i<n && j>=0; i++,j--){
+            if(board[i][j] == 1){
                 return false;
             }
         }
